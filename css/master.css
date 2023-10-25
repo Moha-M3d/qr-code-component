@@ -1,0 +1,80 @@
+:root {
+    /* Primary Colors */
+    --white: hsl(0, 0%, 100%);
+    --bg-color: hsl(212, 45%, 89%);
+    --prgrf-color: hsl(220, 15%, 55%);
+    --heading-color: hsl(218, 44%, 22%);
+
+    /* Paddings */
+    --big-box-padding: 15px;
+    --text-padding: 10px;
+
+    /* Border Radius */
+    --big-box-br: 20px;
+    --qr-image-br: 10px;
+
+    /* Card Flex Container gap */
+    --main-gap: 20px;
+
+    /* Font */
+    --font-size: 15px;
+    --main-ff: 'Outfit', sans-serif;
+
+    /* Measuremnts */
+    --max-width: 300px;
+}
+
+/* Simple Initialize */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+/* Start Main Styling */
+body {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    font-family: var(--main-ff);
+    display: grid;
+    place-items: center;
+    font-size: var(--font-size);
+    padding: 30px 15px;
+}
+
+.qr-card-container {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: var(--max-width);
+    background-color: var(--white);
+    padding: var(--big-box-padding) var(--big-box-padding) calc(2.5 * var(--big-box-padding));
+    border-radius: var(--big-box-br);
+    gap: var(--main-gap);
+    text-align: center;
+    box-shadow: 0 -2px 2px 0 rgba(250, 249, 249, 0.2),
+                4px 0 4px 0 rgba(160, 160, 160, 0.1),
+                0 15px 15px 0 rgba(160, 160, 160, 0.25),
+                -4px 0 4px 0 rgba(160, 160, 160, 0.1)
+
+}
+
+.qr-card-container .qr-code-image {
+    max-width: 100%;
+    border-radius: var(--qr-image-br);
+}
+
+.qr-card-container h2, .qr-card-container h2 + p {
+    padding-inline: var(--text-padding);
+}
+
+.qr-card-container h2 {
+    color: var(--heading-color);
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.qr-card-container h2 + p {
+    color: var(--prgrf-color);
+    font-weight: 500;
+}
